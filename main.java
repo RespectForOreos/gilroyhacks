@@ -8,30 +8,33 @@ class Main {
     foodList.fillPantry();
     ArrayList<Food> foodArray = foodList.getPantry();
     
-    String ingredient;
+
     Scanner console = new Scanner(System.in);
     ArrayList<Food> currentItems = new ArrayList<Food>();
-      Iterator<Food> iterate = currentItems.iterator();
-    do {
-      System.out.print("Ingredient? Type no if there are no more ingredients: ");
-      ingredient = console.next();
-      ingredient.toLowerCase(); //non case-sensitive
-      for (Food item: foodArray) {
-        for (String i: item.getIngredients()) { //
-          if (ingredient.equals(i)) {
-            currentItems.add(item);
-          }  
-          
-        while(iterate.hasNext()){
-          
-         System.out.println(iterate.next().getName());
-        }
-          
-          
-        }
-      }
-    } while (!(console.next().equals("no")));
+     
+    findFood(console, foodArray);
   
-  }
+  } //bracket for Main method
 
+  public static ArrayList<Food> findFood(Scanner console, ArrayList<Food> foodArray) {
+    String ingredient;
+    ArrayList<Food> currentItems = new ArrayList<Food>();
+    
+    do {
+        System.out.print("Ingredient? Type no if there are no more ingredients: ");
+        ingredient = console.next().toLowerCase();
+        //non case-sensitive
+        for (Food item: foodArray) {
+          for (String i: item.getIngredients()) { //
+            if (ingredient.equals(i)) {
+              currentItems.add(item);
+              System.out.println(item);
+            }  
+          }
+        }
+        System.out.print("Ingredient? Type no if there are no more ingredients: ");
+        ingredient = console.next().toLowerCase();
+    } while (!(console.next().equals("no")));
+    return currentItems;
   }
+}
