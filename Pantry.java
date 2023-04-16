@@ -226,11 +226,11 @@ public class Pantry {
     public void fillLunch() {
 
     String[] chickenCaesarSaladIngredients = {
-  "Grilled chicken breast",
-  "Romaine lettuce",
-  "Croutons",
-  "Parmesan cheese",
-  "Caesar dressing"
+  "grilled chicken breast",
+  "romaine lettuce",
+  "croutons",
+  "parmesan cheese",
+  "caesar dressing"
 };
 
       String chickenCaesarSaladInstructions = "1. Season the chicken breast with salt and pepper.\n" +
@@ -248,11 +248,11 @@ pantry.add(chickenCaesarSalad);
       
 
     String[] veggieWrapIngredients = {
-  "Whole wheat tortilla",
-  "Hummus",
-  "Mixed vegetables (such as bell peppers, carrots, cucumbers)",
-  "Spinach leaves",
-  "Feta cheese (optional)"
+  "tortilla",
+  "hummus",
+  "mixed vegetables ",
+  "spinach",
+  "feta cheese"
 };
 
       String veggieWrapInstructions = "1. Lay the whole wheat tortilla flat on a clean surface.\n" +
@@ -269,12 +269,12 @@ pantry.add(veggieWrap);
 
 
       String[] capreseSaladSandwichIngredients = {
-  "Ciabatta bread",
-  "Fresh mozzarella cheese",
-  "Tomato",
-  "Fresh basil leaves",
-  "Balsamic glaze",
-  "Olive oil",
+  "ciabatta bread",
+  "mozzarella cheese",
+  "tomato",
+  "fresh basil leaves",
+  "balsamic glaze",
+  "olive oil",
 };
 
       String capreseSaladSandwichInstructions = "1. Cut the ciabatta bread into desired sandwich size and slice it in half.\n" +
@@ -292,14 +292,14 @@ pantry.add(veggieWrap);
 pantry.add(capreseSaladSandwich);
 
       String[] tunaSaladBowlIngredients = {
-  "Canned tuna",
-  "Mayonnaise",
-  "Dijon mustard",
-  "Red onion",
-  "Celery",
-  "Pickles",
-  "Lemon juice",
-  "Mixed greens or lettuce for serving"
+  "canned tuna",
+  "mayonnaise",
+  "dijon mustard",
+  "red onion",
+  "celery",
+  "pickles",
+  "lemon juice",
+  "lettuce"
 };
 
       String tunaSaladBowlInstructions = "1. Drain the canned tuna and transfer it to a mixing bowl.\n" +
@@ -316,13 +316,13 @@ pantry.add(tunaSaladBowl);
 
 
       String[] quinoaStirFryIngredients = {
-  "Quinoa",
-  "Assorted vegetables",
-  "Garlic",
-  "Ginger",
-  "Soy sauce",
-  "Sesame oil",
-  "Vegetable oil",
+  "quinoa",
+  "assorted vegetables",
+  "garlic",
+  "ginger",
+  "soy sauce",
+  "sesame oil",
+  "vegetable oil",
   
 
 };
@@ -342,15 +342,14 @@ pantry.add(tunaSaladBowl);
 pantry.add(quinoaStirFry);
 
       String[] spinachMushroomQuesadillaIngredients = {
-  "Flour tortillas",
-  "Spinach",
-  "Mushrooms",
-  "Red onion",
-  "Garlic",
-  "Shredded cheese",
-  "Olive oil",
-  "Salt and pepper to taste",
-  "Sour cream and salsa for serving (optional)"
+  "flour tortillas",
+  "spinach",
+  "mushrooms",
+  "red onion",
+  "garlic",
+  "shredded cheese",
+  "olive oil",
+  "sour cream"
 };
 
 String spinachMushroomQuesadillaInstructions = "1. Wash and roughly chop the spinach.\n" +
@@ -378,20 +377,19 @@ pantry.add(spinachMushroomQuesadilla);
     public void fillDinner(){
 
       String[] spaghettiBologneseIngredients = {
-  "Ground beef",
-  "Onion",
-  "Garlic",
-  "Carrots",
-  "Celery",
-  "Tomato paste",
-  "Crushed tomatoes",
-  "Beef broth",
-  "Red wine",
-  "Dried oregano",
-  "Dried basil",
-  "Salt and pepper to taste",
-  "Spaghetti noodles",
-  "Parmesan cheese for serving (optional)"
+  "ground beef",
+  "onion",
+  "garlic",
+  "carrots",
+  "celery",
+  "tomato paste",
+  "crushed tomatoes",
+  "beef broth",
+  "red wine",
+  "dried oregano",
+  "dried basil",
+  "spaghetti noodles",
+  "parmesan cheese"
 };
 
       String spaghettiBologneseInstructions = "1. Heat a large saucepan or Dutch oven over medium heat.\n" +
@@ -411,13 +409,12 @@ pantry.add(spaghettiBolognese);
 
 
       String[] roastedChickenIngredients = {
-  "Whole chicken",
-  "Lemon",
-  "Fresh herbs (such as rosemary, thyme, and sage)",
-  "Garlic",
-  "Olive oil",
-  "Salt and pepper to taste",
-  "Butter for basting (optional)"
+  "whole chicken",
+  "lemon",
+  "fresh herbs",
+  "garlic",
+  "olive oil",
+  "butter"
 };
 
       String roastedChickenInstructions = "1. Preheat oven to 425°F (220°C).\n" +
@@ -437,12 +434,11 @@ pantry.add(roastedChicken);
 
 
       String[] bakedSalmonIngredients = {
-  "Salmon fillets",
-  "Lemon",
-  "Butter",
-  "Garlic",
-  "Fresh dill",
-  "Salt and pepper to taste"
+  "salmon fillets",
+  "lemon",
+  "butter",
+  "garlic",
+  "fresh dill",
 };
 
       String bakedSalmonInstructions = "1. Preheat oven to 375°F (190°C).\n" +
@@ -461,18 +457,17 @@ pantry.add(bakedSalmon);
 
 
       String[] lentilCurryIngredients = {
-  "Lentils",
-  "Assorted vegetables (such as bell peppers, carrots, potatoes, cauliflower)",
-  "Onion",
-  "Garlic",
-  "Ginger",
-  "Tomato sauce",
-  "Coconut milk",
-  "Curry powder",
-  "Turmeric",
-  "Cumin",
-  "Salt and pepper to taste",
-  "Cooked rice for serving"
+  "lentils",
+  "assorted vegetables",
+  "onion",
+  "garlic",
+  "ginger",
+  "tomato sauce",
+  "coconut milk",
+  "curry powder",
+  "turmeric",
+  "cumin",
+  "rice"
 };
 
 
@@ -491,18 +486,17 @@ pantry.add(lentilCurry);
 
 
       String[] beefStirFryIngredients = {
-  "Beef sirloin or flank steak",
-  "Broccoli",
-  "Onion",
-  "Garlic",
-  "Ginger",
-  "Soy sauce",
-  "Cornstarch",
-  "Beef broth",
-  "Brown sugar",
-  "Sesame oil",
-  "Vegetable oil",
-  "Salt and pepper to taste",
+  "beef sirloin",
+  "broccoli",
+  "onion",
+  "garlic",
+  "ginger",
+  "soy sauce",
+  "cornstarch",
+  "beef broth",
+  "brown sugar",
+  "sesame oil",
+  "vegetable oil",
   "rice"
 };
 
@@ -522,7 +516,64 @@ pantry.add(lentilCurry);
 
 Food beefStirFry= new Food ("beefStirFry", beefStirFryIngredients, beefStirFryInstructions);
 pantry.add(beefStirFry);
+
+
+      String[] spaghettiCarbonaraIngredients = {
+  "spaghetti",
+  "bacon",
+  "eggs",
+  "parmesan cheese",
+  "garlic",
+  "fresh parsley",
+};
+
+      String spaghettiCarbonaraInstructions = "1. Cook spaghetti according to package instructions until al dente. Drain and set aside.\n" +
+  "2. Chop bacon or pancetta into small pieces.\n" +
+  "3. Mince garlic and chop fresh parsley.\n" +
+  "4. In a bowl, whisk together eggs, grated Parmesan cheese, minced garlic, chopped parsley, salt, and pepper.\n" +
+  "5. In a large skillet, cook bacon or pancetta over medium heat until crispy.\n" +
+  "6. Remove from the skillet and drain excess grease.\n" +
+  "7. Add cooked spaghetti to the skillet with the cooked bacon or pancetta.\n" +
+  "8. Stir in the egg mixture and cook for 1-2 minutes, stirring constantly, until the sauce thickens.\n" +
+  "9. Remove from heat and season with additional salt and pepper to taste.\n" +
+  "10. Serve hot and enjoy!";
+
+      Food spaghettiCarbonara= new Food ("spaghetti Carbonara", spaghettiCarbonaraIngredients, spaghettiCarbonaraInstructions);
+pantry.add(spaghettiCarbonara);
+
+
+      String[] shrimpAndGritsIngredients = {
+  "shrimp",
+  "grits",
+  "butter",
+  "onion",
+  "bell pepper",
+  "garlic",
+  "chicken broth",
+  "heavy cream",
+  "cheddar cheese",
+  "bacon",
+  "green onions",
+};
+
+      String shrimpAndGritsInstructions = "1. Cook stone-ground grits according to package instructions.\n" +
+  "2. In a large skillet, cook bacon until crispy. Remove from skillet and set aside.\n" +
+  "3. In the same skillet, melt butter over medium heat.\n" +
+  "4. Add diced onion, diced bell pepper, and minced garlic. Cook until softened.\n" +
+  "5. Add raw shrimp to the skillet and cook until pink and opaque.\n" +
+  "6. Remove shrimp from the skillet and set aside.\n" +
+  "7. In the same skillet, add chicken or vegetable broth and bring to a simmer.\n" +
+  "8. Stir in heavy cream and bring to a boil. Cook until slightly thickened.\n" +
+  "9. Stir in grated cheddar cheese until melted.\n" +
+  "10. Season with salt and pepper to taste.\n" +
+  "11. Serve shrimp and sauce over cooked grits.\n" +
+  "12. Crumble cooked bacon on top and sprinkle with chopped green onions.\n" +
+  "13. Serve hot with optional hot sauce on the side and enjoy!";
+
+Food shrimpAndGrits= new Food ("shrimp And Grits", shrimpAndGritsIngredients, shrimpAndGritsInstructions);
+pantry.add(shrimpAndGrits);
       
+
 
     }
 }
