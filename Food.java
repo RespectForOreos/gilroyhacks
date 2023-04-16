@@ -6,34 +6,33 @@ public class Food {
   private String [] ingredientList;
   private String recipe;
   
-  public Food(String name, String[] ingredientList, String recipe) //takes in food name, recipe, and ingredients
-  { 
+  public Food(String name, String[] ingredientList, String recipe) { 
+  //Constructs Food object with name, list of ingredients, recipe
     this.name = name;
     this.ingredientList = ingredientList;
     this.recipe = recipe;
   }
 
-  public String[] getIngredients ()
-  //returns ingredients
-  {
+  public String[] getIngredients () {
+  //Returns ingredients of Food object in an array of Strings
     return ingredientList;
-
-    
   }
-   public String getRecipe ()
-  //returns recipes
-  {
+  
+   public String getRecipe () {
+   //Returns recipe of Food object
     return recipe;
-
-    
   }
   
   public String getName(){
+  //Returns name of Food Object
     return name;
+    
   }
-  
-  public String toString() {
+
+  public String toString (){
+  //toString method to return name in case of Food object interaction in a String method
     return name;
+    
   }
   
 }
