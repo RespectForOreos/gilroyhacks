@@ -3,22 +3,28 @@ import java.util.*;
 public class Pantry {
   
   ArrayList<Food> pantry;
+  //ArrayList containing all Food objects (whether it be Breakfast, Lunch, or Dinner)
   Boolean exitCondition;
+  //Exit condition to exit ingredient input loop
 
   public Pantry() {
+  //Constructs a Pantry object, initializing the ArrayList of Food Objects and setting the exit condition to true (referring to there is another ingredient to be inputted)
     pantry = new ArrayList<Food>();
     exitCondition = true;  
   }
 
   public ArrayList<Food> getPantry() {
+  //Returns the ArrayList of Food objects 
     return pantry;
   }
 
   public Boolean getExitCondition() {
+  //Returns current exit conditon
     return exitCondition;
   }
   
   public ArrayList<Food> findFood(ArrayList<Food> foodArray) {
+  //Returns ArrayList of Food objects that contain ingredients inputted
     ArrayList<Food> currentItems = new ArrayList<Food>();
     String ingredient;
     Scanner console = new Scanner(System.in);
@@ -26,8 +32,10 @@ public class Pantry {
     System.out.println();
     System.out.print("Ingredient? Type no if there are no more ingredients: ");
     ingredient = console.next();
+    //Prompts for ingredient
 
     if (ingredient.equals("no")) {
+    //Stopping condition for ingredient input
       for (int i = 0; i < currentItems.size(); i++) {
         if (i != currentItems.size() - 1) {
           System.out.print(currentItems.get(i) + ", ");
@@ -37,6 +45,7 @@ public class Pantry {
       }
       exitCondition = false;
       return currentItems;
+      //Changes exit condition to false and breaks loop by returning the ArrayList containing Food objects
     }
 
     for (Food item : foodArray) {
@@ -44,23 +53,60 @@ public class Pantry {
         if (ingredient.equals(ingred)) {
           if (!(currentItems.contains(item))) {
             currentItems.add(item);
+            //Adds Food object that contains inputted ingredient to ArrayList
           }
         }
       }
     }
-    System.out.println();
-    for (int i = 0; i < currentItems.size(); i++) {
-      if (i != currentItems.size() - 1) {
-        System.out.print(currentItems.get(i) + ", ");
-      } else {
-        System.out.print(currentItems.get(i));
-      }
+    //Enhaced for loops above iterate through all Food objects in Pantry and locate which ones contain the given ingredient
+    
+    if (currentItems.size() == 0) {
+      System.out.print("There are no recipes that require these ingredients");
+      return currentItems;
     }
+    //If ingredients inputted don't match to a single Food object, statement is returned along with empty ArrayList
+    
     return currentItems;
     
   }
 
+
+
+  public Food findMode(ArrayList<Food> Foods) {
+  //finds and returns the Food object that has the most occurences
+    Food mode = null;
+    int maxCount = 0;
+    
+    for (int i = 0; i < Foods.size(); i++) {
+      int count = 0;
+    
+      for (int j = 0; j < Foods.size(); j++) {
+          if (Foods.get(j).getName().equals(Foods.get(i).getName())) {
+            count++;
+          }
+      }
+
+      if (count > maxCount) {
+        maxCount = count;
+        mode = Foods.get(i);
+        
+      }
+    }
+    
+     System.out.println("Your best option is " + mode.getName());
+    String[] ingredients = mode.getIngredients();
+    for (int i = 0; i < ingredients.length; i++) {
+      System.out.println(ingredients[i]);
+    }
+    System.out.println("Here's how to make it:");
+    System.out.println("\n" + mode.getRecipe());
+    return mode;
+  }
+
+  
+
     public void fillBreakfast() {
+    //Fills Pantry with Breakfast foods
         // CheeseArtichokeOvenOmeletIngredients
       String[] CheeseArtichokeOvenOmeletIngredients = {"salsa", "artichoke hearts", "parmasan cheese", "monterey jack cheese", "sharp cheddar cheese", "eggs", "sour cream"};
 	    Food CheeseArtichokeOvenOmelet = new Food("Zippy Cheese Artichoke Oven Omelet", CheeseArtichokeOvenOmeletIngredients, "Mix all ingredients in a sauce pan, over low heat. Cook until dough pulls from sides of pan. Knead by hand until dough is smooth in texture. Store in tightly closed container.");
@@ -96,7 +142,7 @@ public class Pantry {
 	  "butter"
 	};
 
-	    Food BreakfastGrilledCheeseMexicanStyle = new Food ("Breakfast Grilled Cheese MexicanStyle", BreakfastGrilledCheeseMexicanStyleIngredients, "Chop 4 cheese slices; combine with egg and set aside. Saute turkey bacon and green onions in butter until onions are translucent.Add egg and cheese mixture; cook, stirring over medium heat until egg are set. Remove and keep warm. Butter all slices of bread on one side. Place 4 slices of bread, buttered side down, in clean skillet.Top each with one slice of cheese and an equal amount of scrambled egg. Place one slice cheese over egg on each sandwich; top with remaining bread, buttered side up.Cook over medium-low heat, turning once carefully, until bread is golden brown and cheese is melted." );
+	    Food BreakfastGrilledCheeseMexicanStyle = new Food ("Breakfast Grilled Cheese Mexican Style", BreakfastGrilledCheeseMexicanStyleIngredients, "Chop 4 cheese slices; combine with egg and set aside. Saute turkey bacon and green onions in butter until onions are translucent.Add egg and cheese mixture; cook, stirring over medium heat until egg are set. Remove and keep warm. Butter all slices of bread on one side. Place 4 slices of bread, buttered side down, in clean skillet.Top each with one slice of cheese and an equal amount of scrambled egg. Place one slice cheese over egg on each sandwich; top with remaining bread, buttered side up.Cook over medium-low heat, turning once carefully, until bread is golden brown and cheese is melted." );
 	    pantry.add(BreakfastGrilledCheeseMexicanStyle);
 	    
 	    
@@ -224,6 +270,7 @@ public class Pantry {
 
 	  }
     public void fillLunch() {
+    //Fills Pantry with Lunch foods
 
     String[] chickenCaesarSaladIngredients = {
   "grilled chicken breast",
@@ -243,7 +290,7 @@ public class Pantry {
   "8. Toss the salad gently to coat everything in dressing.\n" +
   "9. Serve and enjoy!";
 
-      Food chickenCaesarSalad = new Food ("chicken Caesar Salad", chickenCaesarSaladIngredients, chickenCaesarSaladInstructions);
+      Food chickenCaesarSalad = new Food ("Chicken Caesar Salad", chickenCaesarSaladIngredients, chickenCaesarSaladInstructions);
 pantry.add(chickenCaesarSalad);
       
 
@@ -264,7 +311,7 @@ pantry.add(chickenCaesarSalad);
   "7. Cut the wrap diagonally into halves or into smaller pieces, if desired.\n" +
   "8. Serve and enjoy!";
       
-Food veggieWrap = new Food ("veggie Wrap", veggieWrapIngredients, veggieWrapInstructions);
+Food veggieWrap = new Food ("Veggie Wrap", veggieWrapIngredients, veggieWrapInstructions);
 pantry.add(veggieWrap);
 
 
@@ -311,7 +358,7 @@ pantry.add(capreseSaladSandwich);
   "7. Garnish with additional lemon juice, salt, and pepper, if desired.\n" +
   "8. Serve and enjoy!";
 
-        Food tunaSaladBowl = new Food ("tuna Salad Bowl", tunaSaladBowlIngredients, tunaSaladBowlInstructions);
+        Food tunaSaladBowl = new Food ("Tuna Salad Bowl", tunaSaladBowlIngredients, tunaSaladBowlInstructions);
 pantry.add(tunaSaladBowl);
 
 
@@ -338,7 +385,7 @@ pantry.add(tunaSaladBowl);
   "9. Garnish with chopped green onions, if desired.\n" +
   "10. Serve hot and enjoy!";
 
-        Food quinoaStirFry = new Food ("quinoa Stir Fry", quinoaStirFryIngredients, tunaSaladBowlInstructions);
+        Food quinoaStirFry = new Food ("Quinoa Stir Fry", quinoaStirFryIngredients, tunaSaladBowlInstructions);
 pantry.add(quinoaStirFry);
 
       String[] spinachMushroomQuesadillaIngredients = {
@@ -369,13 +416,14 @@ String spinachMushroomQuesadillaInstructions = "1. Wash and roughly chop the spi
   "15. Repeat the process with remaining tortillas and filling.\n" +
   "16. Cut the quesadillas into wedges or halves.\n";
   
-Food spinachMushroomQuesadilla = new Food ("spinach Mushroom Quesadilla", spinachMushroomQuesadillaIngredients, tunaSaladBowlInstructions);
+Food spinachMushroomQuesadilla = new Food ("Spinach Mushroom Quesadilla", spinachMushroomQuesadillaIngredients, tunaSaladBowlInstructions);
 pantry.add(spinachMushroomQuesadilla);
       
       
     }
-    public void fillDinner(){
-
+  
+  public void fillDinner(){
+  //Fills Pantry with Dinner foods
       String[] spaghettiBologneseIngredients = {
   "ground beef",
   "onion",
@@ -403,7 +451,7 @@ pantry.add(spinachMushroomQuesadilla);
   "9. Serve hot with grated Parmesan cheese, if desired.\n" +
   "10. Enjoy!";
 
-      Food spaghettiBolognese = new Food ("spaghetti Bolognese", spaghettiBologneseIngredients, spaghettiBologneseInstructions);
+      Food spaghettiBolognese = new Food ("Spaghetti Bolognese", spaghettiBologneseIngredients, spaghettiBologneseInstructions);
 pantry.add(spaghettiBolognese);
 
 
@@ -452,7 +500,7 @@ pantry.add(roastedChicken);
   "9. Bake in the preheated oven for 12-15 minutes, or until salmon is cooked through and flakes easily with a fork.\n" +
   "10. Serve hot and enjoy!";
 
-Food bakedSalmon= new Food ("baked Salmon", bakedSalmonIngredients, bakedSalmonInstructions);
+Food bakedSalmon= new Food ("Baked Salmon", bakedSalmonIngredients, bakedSalmonInstructions);
 pantry.add(bakedSalmon);
 
 
@@ -481,7 +529,7 @@ pantry.add(bakedSalmon);
   "8. Stir in cooked lentils and let simmer for another 5 minutes.\n" +
   "9. Serve hot over cooked rice and enjoy!";
 
-      Food lentilCurry= new Food ("lentil Curry", lentilCurryIngredients, lentilCurryInstructions);
+      Food lentilCurry= new Food ("Lentil Curry", lentilCurryIngredients, lentilCurryInstructions);
 pantry.add(lentilCurry);
 
 
@@ -538,7 +586,7 @@ pantry.add(beefStirFry);
   "9. Remove from heat and season with additional salt and pepper to taste.\n" +
   "10. Serve hot and enjoy!";
 
-      Food spaghettiCarbonara= new Food ("spaghetti Carbonara", spaghettiCarbonaraIngredients, spaghettiCarbonaraInstructions);
+      Food spaghettiCarbonara= new Food ("Spaghetti Carbonara", spaghettiCarbonaraIngredients, spaghettiCarbonaraInstructions);
 pantry.add(spaghettiCarbonara);
 
 
@@ -570,7 +618,7 @@ pantry.add(spaghettiCarbonara);
   "12. Crumble cooked bacon on top and sprinkle with chopped green onions.\n" +
   "13. Serve hot with optional hot sauce on the side and enjoy!";
 
-Food shrimpAndGrits= new Food ("shrimp And Grits", shrimpAndGritsIngredients, shrimpAndGritsInstructions);
+Food shrimpAndGrits= new Food ("Shrimp And Grits", shrimpAndGritsIngredients, shrimpAndGritsInstructions);
 pantry.add(shrimpAndGrits);
       
 
