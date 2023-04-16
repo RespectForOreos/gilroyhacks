@@ -3,38 +3,27 @@ import java.util.Scanner;
 
 class Main {
   public static void main(String[] args) {
-    
-    Pantry foodList = new Pantry();
-    foodList.fillPantry();
-    ArrayList<Food> foodArray = foodList.getPantry();
-    
-
+    Pantry pantry = new Pantry(); 
     Scanner console = new Scanner(System.in);
-    ArrayList<Food> currentItems = new ArrayList<Food>();
-     
-    findFood(console, foodArray);
-  
-  } //bracket for Main method
-
-  public static ArrayList<Food> findFood(Scanner console, ArrayList<Food> foodArray) {
-    String ingredient;
-    ArrayList<Food> currentItems = new ArrayList<Food>();
+    System.out.print("What type of recipe are you looking for? (Breakfast, Lunch, Dinner) ");
+    String answer = console.next();
+    if (answer.equals("Breakfast")) {
+      pantry.fillBreakfast();  
+    } else if (answer.equals("Lunch")) {
+      pantry.fillLunch();
+    } else {
+      pantry.fillDinner();
+    }
+    System.out.println();
     
-    do {
-        System.out.print("Ingredient? Type no if there are no more ingredients: ");
-        ingredient = console.next().toLowerCase();
-        //non case-sensitive
-        for (Food item: foodArray) {
-          for (String i: item.getIngredients()) { //
-            if (ingredient.equals(i)) {
-              currentItems.add(item);
-              System.out.println(item);
-            }  
-          }
-        }
-        System.out.print("Ingredient? Type no if there are no more ingredients: ");
-        ingredient = console.next().toLowerCase();
-    } while (!(console.next().equals("no")));
-    return currentItems;
+    Boolean conditional; 
+    
+    ArrayList<Food> currentPantry = pantry.getPantry();
+    do { 
+      pantry.findFood(currentPantry); 
+      System.out.println();
+      conditional = pantry.exitCondition;
+    } while (conditional);
+    
   }
 }
