@@ -1,3 +1,2 @@
 # Best ran on Eclipse
-This project is recipe generator that finds the most compatible recipe for the ingredients you have at home.
-
+ayo ayoo AYOOOOOOOO hien a fat lil monkey. #notASeniorDev #broCantGetAJob #laidOff #notMetaBound #youreABum #youreNotGood #oneBoundLilBro
